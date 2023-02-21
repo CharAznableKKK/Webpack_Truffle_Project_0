@@ -11,7 +11,7 @@ module.exports = {
     solc: {
       version: "0.5.1",    // Fetch exact version from solc-bin (default: truffle's version)
        optimizer: {
-         enabled: false,
+         enabled: true,
          runs: 200
        },
     }

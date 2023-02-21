@@ -6,7 +6,7 @@ contract XYZCoin is ERC20 {
     string public name = "XYZCoin";
     string public symbol = "XYZ";
     uint8 public decimals = 0;
-    uint public total_supply = 1000;
+    uint256 public total_supply = 1000;
  
     mapping (address => uint) public balances;
     mapping (address => mapping (address => uint)) public allowed;
@@ -24,7 +24,7 @@ contract XYZCoin is ERC20 {
     } 
      
     function transfer(address _to, uint256 _value) public returns (bool) {
-        require(_to != address(0x0));
+        // require(_to != address(0x0));
         require(_value <= balances[msg.sender]);
         balances[msg.sender] -= _value;
         balances[_to] += _value;
@@ -33,7 +33,7 @@ contract XYZCoin is ERC20 {
     }
 
     function transferFrom(address _from, address _to, uint256 _value) public returns (bool) {
-        require(_to != address(0x0));
+        // require(_to != address(0x0));
         require(_value <= balances[_from]);
         require(_value <= allowed[_from][msg.sender]);
 
